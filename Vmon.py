@@ -4,6 +4,16 @@
 # going off when voltage drops below about 4.65V.
 # The signal is also available on a gpio line (GPIO35).
 
+"""
+The red power LEDs indicate that the Pi has an active power supply. In the Model A and Model B (rev 1) the LED is 
+connected directly to the 3.3V supply. If it fails to light or flashes it indicates that there is a problem with 
+the power supply.
+
+In the later models (A+, B+, Pi 2 & Pi 3) the power LED is slightly more intelligent. it is connected to the 5V 
+and will flash if the voltage drops below 4.63V.
+
+"""
+
 import RPi.GPIO as GPIO , time
 from subprocess import call
 import shlex
