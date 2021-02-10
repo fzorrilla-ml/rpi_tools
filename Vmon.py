@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# The Raspberry Pi 1 B+ has an under voltage detect trigger which results in the power led 
+# going off when voltage drops below about 4.65V.
+# The signal is also available on a gpio line (GPIO35).
+
 import RPi.GPIO as GPIO , time
 from subprocess import call
 import shlex
